@@ -1,0 +1,5 @@
+.pre__code {
+  border: 1px solid red;
+  max-width: 500px;
+  overflow-wrap: normal;
+}
