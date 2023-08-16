@@ -5,6 +5,15 @@
   overflow: none;
 }
 
+body {
+  background-image: url(assets/images/pexels-drift-shutterbug-2085998.jpg);
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  height: 100vh;
+}
+
 a {
   text-decoration: none;
 }

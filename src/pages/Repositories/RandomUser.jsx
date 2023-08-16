@@ -1,4 +1,5 @@
 import { useQuery } from "react-query";
+import "./Repos.css";
 
 export default function RandomUser() {
   const fetchRandomUserId = async () => {
@@ -37,27 +38,26 @@ export default function RandomUser() {
   }
 
   console.log(fullUserQuery);
+  const { isLoading, isError, data } = fullUserQuery;
 
   return (
-    <div>
+    <div className="main__container">
       <h1>Random User</h1>
-      {fullUserQuery.isLoading ? (
+      {isLoading && data === undefined ? (
         <div>Carregando dados do usuário...</div>
-      ) : fullUserQuery.isError ? (
+      ) : isError ? (
         <div>Erro ao carregar os dados do usuário.</div>
       ) : (
-        <div>
-          <p>Login: {fullUserQuery.data.login}</p>
-          <p>Name: {fullUserQuery.data.name}</p>
-          <p>City: {fullUserQuery.data.location}</p>
-          <a
-            href={`https://api.github.com/users/${fullUserQuery.data.login}/repos`}
-          >
+        <div className="user__data">
+          <p>Login: {data.login}</p>
+          <p>Name: {data.name}</p>
+          <p>City: {data.location}</p>
+          <a href={`https://api.github.com/users/${data.login}/repos`}>
             Repositórios
           </a>
-          <img src={fullUserQuery.data.avatar_url} alt="" />
+          <img src={data.avatar_url} alt="" />
           <button onClick={() => randomUserQuery.refetch()}>
-            Buscar Novo Usuário
+            New Random User
           </button>
         </div>
       )}

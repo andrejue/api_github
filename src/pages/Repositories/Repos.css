@@ -1,0 +1,31 @@
+.main__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  height: 90vh;
+}
+
+.user__data {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 400px;
+  height: 600px;
+
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(19, 23, 77, 0.482);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border-radius: 10px;
+  border: 1px solid rgba(120, 120, 120, 0.18);
+}
+
+.user__data > img {
+  max-width: 200px;
+  border-radius: 50%;
+  box-shadow: 2px 3px 6px rgba(39, 39, 39, 0.505);
+}
